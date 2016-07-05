@@ -1,0 +1,26 @@
+{
+    "name": "EpisoPassExtension",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "FacebookなどにログインしようとするとEpisoPassが開く",
+
+    "applications": {
+	"gecko": {
+	    "id": "borderify@mozilla.org",
+	    "strict_min_version": "45.0"
+	}
+    },
+    "icons": {
+	"48": "icons/episopass-48.png",
+	"96": "icons/episopass-96.png"
+    },
+
+    "content_scripts": [
+	{
+	    "matches": ["*://*/*"],
+	    "js": ["showModalDialog.js", "jquery-2.1.4.min.js", "episopass.js"],
+	    "run_at": "document_idle"
+	}
+    ]
+}
+
