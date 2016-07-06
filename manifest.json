@@ -18,7 +18,7 @@
     "content_scripts": [
 	{
 	    "matches": ["*://*/*"],
-	    "js": ["jquery-2.1.4.min.js", "episopass.js"],
+	    "js": ["exports.js", "jquery-2.1.4.min.js", "crypt.js", "jquery-ui.js", "md5.js", "app.js", "episopass.js"],
 	    "run_at": "document_idle"
 	}
     ]
