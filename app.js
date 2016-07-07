@@ -2,16 +2,15 @@
 // 
 //
 
-var display = function(data,name,qno,answer){
-    var element  = $('#episopass');
-
-    element.children().remove();
+var display = function(data,name,passelement,qno,answer){
+    var episodiv  = $('#episopass');
+    episodiv.children().remove();
 
     var seed = data['seed'];
     var qtext = data['qas'][qno]['question'];
 
     var center = $('<center>');
-    element.append(center);
+    episodiv.append(center);
 
     if(a = qtext.match(/\/([^\/]+\.(gif|png|jpg|jpeg))$/i)){
         var imagediv = $('<img>');
@@ -46,12 +45,12 @@ var display = function(data,name,qno,answer){
             var a = Number($(this).attr('anumber'));
             answer[qno] = a;
             if(qno < data['qas'].length - 1){
-		display(data,name,qno+1,answer);
+		display(data,name,passelement,qno+1,answer);
             }
             else { // 終了
                 var newpass = exports.crypt(seed,secretstr(data,answer));
-                $('#pass').val(newpass);
-                element.remove(); // 質問ウィンドウを消す
+                passelement.val(newpass);
+                episodiv.remove(); // 質問ウィンドウを消す
 	    }
 	});
         answersdiv.append(input);
@@ -68,6 +67,6 @@ function secretstr(data,answer){
     return secret;
 }
 
-exports.init = function(data,name){
-    display(data,name,0,[]);
+exports.init = function(data,name,passelement){
+    display(data,name,passelement,0,[]);
 };
