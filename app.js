@@ -1,7 +1,6 @@
 //
 // 
 //
-
 var display = function(data,name,seed,passelement,qno,answer){
     var episodiv  = $('#episopass');
     episodiv.children().remove();
@@ -11,25 +10,25 @@ var display = function(data,name,seed,passelement,qno,answer){
     var center = $('<center>');
     episodiv.append(center);
 
-    if(a = qtext.match(/\/([^\/]+\.(gif|png|jpg|jpeg))$/i)){
-        var imagediv = $('<img>');
-        imagediv.css('width',100);
-        imagediv.attr('src',qtext);
-        center.append(imagediv);
+    var div;
+    if(qtext.match(/\/([^\/]+\.(gif|png|jpg|jpeg))$/i)){
+        div = $('<img>');
+        div.css('width',120);
+        div.attr('src',qtext);
     }
     else {
-        var questiondiv = $('<div>');
-        questiondiv.text(qtext);
-        questiondiv.css('background-color','#ccc');
-        questiondiv.css('width','100%');
-        questiondiv.css('margin','4px');
-        questiondiv.css('padding','4px');
-        questiondiv.css('margin','0 auto');
-        center.append(questiondiv);
+        div = $('<div>');
+        div.text(qtext);
+        div.css('background-color','#ccc');
+        div.css('width','100%');
+        div.css('margin','4px');
+        div.css('padding','4px');
+        div.css('margin','0 auto');
     }
+    center.append(div);
     center.append($('<p>'));
-    var answersdiv = $('<div>');
-    center.append(answersdiv);
+    div = $('<div>');
+    center.append(div);
     
     var answers = data['qas'][qno]['answers'];
     for(var i=0;i<answers.length;i++){
@@ -52,9 +51,9 @@ var display = function(data,name,seed,passelement,qno,answer){
                 episodiv.remove(); // 質問ウィンドウを消す
 	    }
 	});
-        answersdiv.append(input);
+        div.append(input);
     }
-}
+};
 
 function secretstr(data,answer){
     var secret = "";

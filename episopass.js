@@ -3,11 +3,6 @@
 // ChromeでもFirefoxでも使えるはず
 //
 
-//var script = document.createElement('script');
-//script.type = 'text/javascript';
-//script.src = "http://EpisoPass.com/md5.js";
-//document.body.appendChild(script);
-
 $(function(){
     var passelement = [];
     var episourl = null;
