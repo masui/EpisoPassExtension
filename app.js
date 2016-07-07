@@ -40,8 +40,7 @@ var display = function(data,name,seed,passelement,qno,answer){
 	input.css('padding','1pt');
         input.click(function(event){
             event.preventDefault();
-            var a = Number($(this).attr('anumber'));
-            answer[qno] = a;
+            answer[qno] = Number($(this).attr('anumber'));
             if(qno < data['qas'].length - 1){
 		display(data,name,seed,passelement,qno+1,answer);
             }

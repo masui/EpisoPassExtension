@@ -5,15 +5,26 @@
 
 $(function(){
     var passelement = [];
-    var episourl = null;
     var idelement = null;
     var seed  = '';
-    if(location.href.match(/facebook.com/)){
+    if(location.href.match(/facebook.com/)){ // OK
 	passelement = $('#pass');
 	idelement = $('#email');
 	seed = "Facebook123456";
     }
-    if(passelement[0] != undefined && passelement.val() == ''){
+    if(location.href.match(/amazon/)){ // OK
+	passelement = $('#ap_password');
+	idelement = $('#ap_email');
+	seed = "Amazon123456";
+    }
+    if(location.href.match(/twitter.com/)){ // Not OK
+	passelement = $('.text-input')[1];
+	idelement = $('.js-signin-email');
+	passelement = idelement;
+	seed = "Twitter123456";
+    }
+
+    if(idelement && passelement && passelement[0] != undefined && passelement.val() == ''){
 	passelement.on('click',function(){
 	    if(!window.clicked){
 		var id = idelement.val();
