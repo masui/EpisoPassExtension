@@ -1,27 +1,17 @@
 //
+// 
 //
-//
 
-var width, height;
+var display = function(data,name,qno,answer){
+    var element  = $('#episopass');
 
-var qno = 0; // いくつめの問題か
-
-var body;
-var answer = [];
-var seed;
-
-var display = function(data,name){
-    // body  = $('body');
-    body  = $('#episopass');
-
-    body.children().remove();
+    element.children().remove();
 
     var seed = data['seed'];
-
     var qtext = data['qas'][qno]['question'];
 
     var center = $('<center>');
-    body.append(center);
+    element.append(center);
 
     if(a = qtext.match(/\/([^\/]+\.(gif|png|jpg|jpeg))$/i)){
         var imagediv = $('<img>');
@@ -50,26 +40,25 @@ var display = function(data,name){
         input.attr('value',answers[i]);
         input.attr('anumber',i);
         input.css('margin','2pt');
-        input.css('padding','1pt');
+	input.css('padding','1pt');
         input.click(function(event){
             event.preventDefault();
             var a = Number($(this).attr('anumber'));
             answer[qno] = a;
             if(qno < data['qas'].length - 1){
-                qno += 1;
-		display(data,name);
+		display(data,name,qno+1,answer);
             }
             else { // 終了
-                var newpass = exports.crypt(seed,secretstr(data));
+                var newpass = exports.crypt(seed,secretstr(data,answer));
                 $('#pass').val(newpass);
-                body.remove(); // 質問ウィンドウを消す
+                element.remove(); // 質問ウィンドウを消す
 	    }
 	});
         answersdiv.append(input);
     }
 }
 
-function secretstr(data){
+function secretstr(data,answer){
     var secret = "";
     var qas = data['qas'];
     for(var i=0;i<qas.length;i++){
@@ -80,12 +69,5 @@ function secretstr(data){
 }
 
 exports.init = function(data,name){
-    //  data = JSON.parse(json);
-    window.addEventListener('popstate', function(event) {
-        qno = event.state.qno;
-        display();
-    },false );
-
-    display(data,name);
+    display(data,name,0,[]);
 };
-
