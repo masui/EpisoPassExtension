@@ -12,9 +12,11 @@ $(function(){
     var passelement = [];
     var episourl = null;
     var idelement = null;
+    var seed  = '';
     if(location.href.match(/facebook.com/)){
 	passelement = $('#pass');
 	idelement = $('#email');
+	seed = "Facebook123456";
     }
     if(passelement[0] != undefined && passelement.val() == ''){
 	passelement.on('click',function(){
@@ -34,7 +36,7 @@ $(function(){
 		$('body').append(div);
 
 		$.getJSON( "http://episopass.com/"+id+".json", function(data){
-		    exports.init(data,id,passelement);
+		    exports.init(data,id,seed,passelement);
 		});
 	    }
 	    window.clicked = true;

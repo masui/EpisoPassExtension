@@ -2,11 +2,10 @@
 // 
 //
 
-var display = function(data,name,passelement,qno,answer){
+var display = function(data,name,seed,passelement,qno,answer){
     var episodiv  = $('#episopass');
     episodiv.children().remove();
 
-    var seed = data['seed'];
     var qtext = data['qas'][qno]['question'];
 
     var center = $('<center>');
@@ -45,7 +44,7 @@ var display = function(data,name,passelement,qno,answer){
             var a = Number($(this).attr('anumber'));
             answer[qno] = a;
             if(qno < data['qas'].length - 1){
-		display(data,name,passelement,qno+1,answer);
+		display(data,name,seed,passelement,qno+1,answer);
             }
             else { // 終了
                 var newpass = exports.crypt(seed,secretstr(data,answer));
@@ -67,6 +66,6 @@ function secretstr(data,answer){
     return secret;
 }
 
-exports.init = function(data,name,passelement){
-    display(data,name,passelement,0,[]);
+exports.init = function(data,name,seed,passelement){
+    display(data,name,seed,passelement,0,[]);
 };
