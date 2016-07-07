@@ -22,12 +22,12 @@ $(function(){
 		//window.open(episourl,'xxxx',"width=600,height=500,menubar=no,toolbar=no,location=no,scrollbars=yes");
 		// EpisoPassから値を戻す方法がわからない...
 
-		$.getJSON( "http://episopass.com/masui.json", function(data){
-		    name = $('#email').val();
-		    if(!name || name == ''){
-			name = 'masui';
-		    }
-		    exports.init(data);
+		var name = $('#email').val();
+		if(!name || name == ''){
+		    name = 'masui';
+		}
+		$.getJSON( "http://episopass.com/"+name+".json", function(data){
+		    exports.init(data,name);
 		});
 
 		// alert(exports.MD5_hexhash('abc')); // これは出るのだが
