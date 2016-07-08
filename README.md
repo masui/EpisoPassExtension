@@ -16,6 +16,9 @@
 * Chromeでは、[https://EpisoPass.com](https://EpisoPasscom/)から```XMLHttpRequest()```しなければ動かない
 * このためにEpisoPass.comをhttps化しなければならなかった...
 
+### 拡張機能パッケージの生成
 
+* ```make xpi``` でFirefoxの拡張機能ファイルができる
+* Chromeの拡張機能ファイルは```chrome://extensions/```で「拡張機能のパッケージ化」を指定して作成する
 
 
