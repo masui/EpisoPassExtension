@@ -12,17 +12,18 @@
 * 問題の編集は```EpisoPass.com/(ID)```で行なう
 * e.g. [http://EpisoPass.com/masui@pitecan.com](http://EpisoPass.com/masui@pitecan.com)
 
-### 注意
+### 面倒だったところ
 
 * FirefoxとChromeで同じJSが使えるのだが制限が微妙に違う
 * Firefoxでは別サイト(EpisoPass.com)からgetJSON()できるのだがChromeではできない
 * Chromeでは、[https://EpisoPass.com](https://EpisoPasscom/)から```XMLHttpRequest()```しなければ動かない
 * このためにEpisoPass.comをhttps化しなければならなかった...
-* EpisoPass.com側はCORS対応しておく必要がある
+* EpisoPass.com側はCORS対応しておく必要があった
 
 ### 拡張機能パッケージの生成
 
 * ```make xpi``` でFirefoxの拡張機能ファイルができる
 * Chromeの拡張機能ファイルは```chrome://extensions/```で「拡張機能のパッケージ化」を指定して作成する
+* ちゃんと配るためには署名が必要らしいけどまだ対応できてません
 
 
