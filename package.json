@@ -1,15 +1,15 @@
 {
-  "title": "EpisoPass Extension",
-  "name": "EpisoPass",
-  "version": "0.0.1",
-  "description": "EpisoPass Password Generator",
-  "main": "episopass.js",
-  "author": "Toshiyuki Masui",
-  "engines": {
-    "firefox": ">=38.0a1"
-  },
-  "license": "MIT",
-  "keywords": [
-    "jetpack"
-  ]
+    "title": "EpisoPass Extension",
+    "name": "episopass",
+    "version": "0.0.1",
+    "description": "EpisoPass Password Generator",
+    "main": "episopass.js",
+    "author": "Toshiyuki Masui",
+    "engines": {
+	"firefox": ">=38.0a1"
+    },
+    "license": "MIT",
+    "keywords": [
+	"jetpack"
+    ]
 }
