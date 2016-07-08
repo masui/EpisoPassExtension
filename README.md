@@ -7,7 +7,7 @@
 
 * ```EpisoPass.com/(ID).json``` からなぞなぞ問題のJSONデータを取得し、それをもとにして問題をユーザに提示し、回答からパスワード生成する
 * 問題の編集は```EpisoPass.com/(ID)```で行なう
-* e.g. [http://EpisoPass.com/masui](http://EpisoPass.com/masui)
+* e.g. [http://EpisoPass.com/masui@pitecan.com](http://EpisoPass.com/masui@pitecan.com)
 
 ### 注意
 
