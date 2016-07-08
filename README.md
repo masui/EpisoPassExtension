@@ -15,6 +15,7 @@
 * Firefoxでは別サイト(EpisoPass.com)からgetJSON()できるのだがChromeではできない
 * Chromeでは、[https://EpisoPass.com](https://EpisoPasscom/)から```XMLHttpRequest()```しなければ動かない
 * このためにEpisoPass.comをhttps化しなければならなかった...
+* EpisoPass.com側はCORS対応しておく必要がある
 
 ### 拡張機能パッケージの生成
 
