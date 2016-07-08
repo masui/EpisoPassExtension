@@ -2,8 +2,9 @@
 
 ![EpisoPass](https://gyazo.com/826410d0517ab5a3c93a385d9f3c6107.png)
 
-* ChromeやFirefoxの**拡張機能**
-* FacebookやAmazonのログイン画面でID(メアドなど)を入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、回答するとパスワードが計算されて入力される
+* [EpisoPass](http://EpisoPass.com/)をChromeやFirefoxの**拡張機能**で実装したもの
+* FacebookやAmazonのログイン画面でID(メアドなど)を入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、すべてに回答するとパスワードが計算されて入力される
+* すべての回答が正しかったときだけ正しいパスワードが生成されてログインに成功する
 
 ### 実装
 
