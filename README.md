@@ -1,15 +1,21 @@
 # ブラウザ拡張機能でEpisoPassを呼び出す
 
-* ChromeやFirefoxの拡張機能
-* FacebookやAmazonのログイン画面でパスワード入力枠をクリックするとEpisoPass問題が表示され、回答すると計算されたパスワードが入力される
-
-### 使い方
-
-* FacebookまたはAmazonのログイン画面でメールアドレスを入力してからパスワード枠をクリックするとEpisoPassの質問が表示される
-* 正答をクリックする操作を繰り返すとパスワードが生成されてパスワード枠に入力される
+* ChromeやFirefoxの**拡張機能**
+* FacebookやAmazonのログイン画面でID(メアドなど)を入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、回答するとパスワードが計算されて入力される
 
 ### 実装
 
-* ```EpisoPass.com/(ID).json``` からなぞなぞ問題のJSONデータを取得し、それをもとにしてパスワード生成する
+* ```EpisoPass.com/(ID).json``` からなぞなぞ問題のJSONデータを取得し、それをもとにして問題をユーザに提示し、回答からパスワード生成する
 * 問題の編集は```EpisoPass.com/(ID)```で行なう
+* e.g. [http://EpisoPass.com/masui](http://EpisoPass.com/masui)
+
+### 注意
+
+* FirefoxとChromeで同じJSが使えるのだが制限が微妙に違う
+* Firefoxでは別サイト(EpisoPass.com)からgetJSON()できるのだがChromeではできない
+* Chromeでは、[https://EpisoPass.com](https://EpisoPasscom/)から```XMLHttpRequest()```しなければ動かない
+* このためにEpisoPass.comをhttps化しなければならなかった...
+
+
+
 
