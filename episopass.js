@@ -23,18 +23,33 @@
     }
     if (idelement && passelement && passelement[0] !== void 0 && passelement.val() === '') {
       return passelement.on('click', function() {
-        var div, id;
+        var browser, div, id, xhr;
         if (!window.clicked) {
           id = idelement.val();
           if (!id || id === '') {
             id = 'masui';
           }
+          div = $('<div>').css('position', 'absolute').css('left', '200px').css('top', '100px').css('width', '400px').css('height', '250px').css('background-color', '#ddd').css('border-radius', '5px').attr('id', 'episopass');
+          $('body').append(div);
+          browser = window.navigator.userAgent.toLowerCase();
+          if (browser.indexOf("firefox" > -1)) {
+            $.getJSON("http://episopass.com/" + id + ".json", function(data) {
+              return exports.run(data, id, seed, passelement);
+            });
+          }
+          if (browser.indexOf("chrome" > -1)) {
+            xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://episopass.com/" + id + ".json", true);
+            xhr.onreadystatechange = function() {
+              var data;
+              if (xhr.readyState === 4) {
+                data = JSON.parse(xhr.responseText);
+                return exports.run(data, id, seed, passelement);
+              }
+            };
+            xhr.send();
+          }
         }
-        div = $('<div>').css('position', 'absolute').css('left', '200px').css('top', '100px').css('width', '400px').css('height', '250px').css('background-color', '#ddd').css('border-radius', '5px').attr('id', 'episopass');
-        $('body').append(div);
-        $.getJSON("http://episopass.com/" + id + ".json", function(data) {
-          return exports.run(data, id, seed, passelement);
-        });
         return window.clicked = true;
       });
     }
