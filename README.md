@@ -19,7 +19,7 @@
 * Firefox
   * ```about:addons```を開いて[Firefox用xpi](https://github.com/masui/EpisoPassExtension/raw/master/episopass.xpi)をDrag&Drop
 * Chrome
-  * ```chrome://extensions/```を開いて[Chrome用crx](https://github.com/masui/EpisoPassExtension/raw/master/episopass.crx)をDrag&Drop
+  * [Chromeウェブストア](https://chrome.google.com/webstore/detail/episopassextension/gempcojpejfhobcccooiifdoddlmokgj)からインストール
 
 ### 実装
 
@@ -40,6 +40,11 @@
 * ```make xpi``` でFirefoxの拡張機能ファイルができる
   * ユーザIDとか秘密文字列とかを環境変数にセットが必要
 * Chromeの拡張機能ファイルは```chrome://extensions/```で「拡張機能のパッケージ化」を指定して人力で作成する
+
+### 公開
+
+* [Chrome機能拡張開発センタ](https://chrome.google.com/webstore/developer/edit/gempcojpejfhobcccooiifdoddlmokgj)
+* [Firefox機能拡張開発センタ](https://addons.mozilla.org/ja/developers/addon/episopassextension/)
 
 ### 問題 / 感想
 
