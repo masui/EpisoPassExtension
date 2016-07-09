@@ -3,9 +3,15 @@
 ![EpisoPass](https://gyazo.com/02708212f9a3b9cf75b7f53c560abde2.png)
 
 * [EpisoPass](http://EpisoPass.com/)をChromeやFirefoxの**拡張機能**で実装したもの
-* FacebookやAmazonのログイン画面でメールアドレスを入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、すべてに回答するとパスワードが計算されて入力される
-* たとえばメールアドレスとして```masui@pitecan.com```を使用する場合は[http://EpisoPass.com/masui@pitecan.com]()に問題を用意しておく
+* FacebookやAmazonのログイン画面でメールアドレスを入力してから
+パスワード入力枠をクリックすると上のようにEpisoPass問題が表示され、すべてに回答するとパスワードが計算されて入力される
+* たとえばメールアドレスとして```masui@pitecan.com```を使用する場合は[http://EpisoPass.com/masui@pitecan.com](http://EpisoPass.com/masui@pitecan.com)に問題を用意しておく
 * すべての回答が正しかったときだけ正しいパスワードが生成されるのでログインに成功する
+
+### 対応サービス
+
+* Amazon (Seedは```Amazon123456```)
+* Facebook (Seedは```Facebook123456```)
 
 ### ダウンロード / インストール
 
