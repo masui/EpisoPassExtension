@@ -1,4 +1,4 @@
-# ブラウザ拡張機能でEpisoPassを呼び出す
+# ブラウザ拡張機能でEpisoPassを使う
 
 ![EpisoPass](https://gyazo.com/02708212f9a3b9cf75b7f53c560abde2.png)
 
