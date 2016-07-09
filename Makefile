@@ -16,7 +16,7 @@ xpi: js
 #
 sign: xpi
 	web-ext sign --api-key $(MOZILLA_USER) --api-secret $(MOZILLA_SECRET)
-	/bin/mv web-ext-artifacts/`ls -1 -t web-ext-artifacts | head -1` episopass.xpi
+	/bin/cp web-ext-artifacts/`ls -1 -t web-ext-artifacts | head -1` episopass.xpi
 
 clean:
 	/bin/rm -r -f *~
