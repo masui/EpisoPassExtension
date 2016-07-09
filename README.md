@@ -6,7 +6,7 @@
 * FacebookやAmazonのログイン画面でID(メアドなど)を入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、すべてに回答するとパスワードが計算されて入力される
 * すべての回答が正しかったときだけ正しいパスワードが生成されてログインに成功する
 
-### ダウンロード
+### ダウンロード / インストール
 
 * [Firefox用xpi](https://github.com/masui/EpisoPassExtension/raw/master/episopass.xpi)
   * Firefoxで```about:addons``` を開いてDrag&Drop
