@@ -3,8 +3,9 @@
 ![EpisoPass](https://gyazo.com/02708212f9a3b9cf75b7f53c560abde2.png)
 
 * [EpisoPass](http://EpisoPass.com/)をChromeやFirefoxの**拡張機能**で実装したもの
-* FacebookやAmazonのログイン画面でID(メアドなど)を入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、すべてに回答するとパスワードが計算されて入力される
-* すべての回答が正しかったときだけ正しいパスワードが生成されてログインに成功する
+* FacebookやAmazonのログイン画面でメールアドレスを入力してからパスワード入力枠をクリックするとEpisoPass問題が表示され、すべてに回答するとパスワードが計算されて入力される
+* たとえばメールアドレスとして```masui@pitecan.com```を使用する場合は[http://EpisoPass.com/masui@pitecan.com]()に問題を用意しておく
+* すべての回答が正しかったときだけ正しいパスワードが生成されるのでログインに成功する
 
 ### ダウンロード / インストール
 
@@ -22,7 +23,7 @@
 ### 面倒だったところ
 
 * FirefoxとChromeで同じJSが使えるのだが制限が微妙に違う
-* Firefoxでは別サイト(EpisoPass.com)からgetJSON()できるのだがChromeではできない
+* Firefoxでは[http://EpisoPass.com]()からgetJSON()できるのだがChromeではできない
 * Chromeでは、[https://EpisoPass.com](https://EpisoPasscom/)から```XMLHttpRequest()```しなければ動かない
 * このためにEpisoPass.comをhttps化しなければならなかった...
 * EpisoPass.com側はCORS対応しておく必要があった
@@ -31,15 +32,16 @@
 
 * ```make xpi``` でFirefoxの拡張機能ファイルができる
   * ユーザIDとか秘密文字列とかを環境変数にセットが必要
-* Chromeの拡張機能ファイルは```chrome://extensions/```で「拡張機能のパッケージ化」を指定して作成する
-  * Web上に置いてChromeからアクセスしてもインストールできない
-  * ダウンロードしてからChromeにDrag&Dropすれば大丈夫
+* Chromeの拡張機能ファイルは```chrome://extensions/```で「拡張機能のパッケージ化」を指定して人力で作成する
 
-### 問題
+### 問題 / 感想
 
 * AmazonとFacebookでしか使えません
 * シードが決め打ちになっている
   * ユーザがシードを自由に決められるようにするにはどうすればいいだろう?
+* **全くパスワードを見ることも打つこともなくパスワード利用システムにログインできるのは便利すぎる**
+* こういうシステムは昔はGreasemonkeyで作ってたが、拡張機能で作る方がよさげである
+
 
 
 
