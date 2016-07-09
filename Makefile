@@ -1,3 +1,6 @@
+#
+# Firefox/Chrome用EpisoPass拡張機能
+#
 js:
 	coffee -c crypt.coffee
 	coffee -c app.coffee
@@ -9,9 +12,11 @@ xpi: js
 	zip -r episopass.xpi ${XPIFILES}
 
 # Firefox拡張機能を署名する
-# バージョンを上げる必要あり
+# manifest.json中のバージョン番号を更新してから動かすこと
+#
 sign: xpi
 	web-ext sign --api-key $(MOZILLA_USER) --api-secret $(MOZILLA_SECRET)
+	/bin/mv web-ext-artifacts/`ls -1 -t web-ext-artifacts | head -1` episopass.xpi
 
 clean:
 	/bin/rm -r -f *~
