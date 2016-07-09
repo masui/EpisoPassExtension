@@ -9,7 +9,9 @@
 ### ダウンロード
 
 * [Firefox用xpi](https://github.com/masui/EpisoPassExtension/raw/master/episopass.xpi)
+  * Firefoxで```about:addons``` を開いてDrag&Drop
 * [Chrome用crx](https://github.com/masui/EpisoPassExtension/raw/master/episopass.crx)
+  * Chromeで```chrome://extensions/``` を開いてDrag&Drop
 
 ### 実装
 
