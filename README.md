@@ -1,6 +1,6 @@
 # ブラウザ拡張機能でEpisoPassを使う
 
-![EpisoPass](https://gyazo.com/67a2647b50906f0fd034a30c20cd02f1.png)
+![EpisoPass](https://gyazo.com/9d15e1e7bbf95f12804e077cdf4e12b6.gif)
 
 * ChromeやFirefoxの**拡張機能**を使って[EpisoPass](http://EpisoPass.com/)がログイン画面で動くようにしたもの
 * FacebookやAmazonのログイン画面で***メールアドレスを入力してから
