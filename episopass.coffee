@@ -38,7 +38,7 @@ $ ->
           .css 'left','200px'
           .css 'top','100px'
           .css 'width','400px'
-          .css 'height','250px'
+          .css 'height','300px'
           .css 'background-color','#ddd'
           .css 'border-radius','5px'
           .attr 'id','episopass'

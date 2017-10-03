@@ -36,6 +36,9 @@ display = (data,name,seed,passelement,qno,answer) ->
       .css 'margin','2pt'
       .css 'padding','1pt'
       .css 'width', '50pt'
+      .css 'height', '25pt'
+      .css 'border-radius','4px'
+      .css 'background-color','#ccc'
       .click (event) ->
         event.preventDefault()
         answer[qno] = Number($(this).attr('anumber'))
