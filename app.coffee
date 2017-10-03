@@ -16,7 +16,7 @@ display = (data,name,seed,passelement,qno,answer) ->
     div = $('<div>')
       .text qtext
       .css 'background-color','#ccc'
-      .css 'width','390px'
+      .css 'width','400px'
       .css 'border-radius','5px'
       #.css 'margin','4px'
       .css 'padding','4px'
@@ -35,6 +35,7 @@ display = (data,name,seed,passelement,qno,answer) ->
       .attr 'anumber',i
       .css 'margin','2pt'
       .css 'padding','1pt'
+      .css 'width', '50pt'
       .click (event) ->
         event.preventDefault()
         answer[qno] = Number($(this).attr('anumber'))
