@@ -11,6 +11,15 @@ xpi: js
 	/bin/rm -f episopass.xpi
 	zip -r episopass.xpi ${XPIFILES}
 
+#
+# Chromeエクステンション公開用のzipを作る
+#
+ZIPFILES=manifest.json app.js crypt.js episopass.js exports.js jquery-2.1.4.min.js md5.js episopass.png icons
+zip: js
+	/bin/rm -f sutare.zip
+	zip -r episopass.zip ${ZIPFILES}
+
+#
 # Firefox拡張機能を署名する
 # manifest.json中のバージョン番号を更新してから動かすこと
 #
