@@ -25,6 +25,16 @@
       idelement = $('.email-input');
       service = 'Twitter';
     }
+    if (location.href.match(/github.com/)) {
+      idelement = $('#login_field');
+      passelement = $('#password');
+      service = 'GitHub';
+    }
+    if (location.href.match(/value-domain.com/)) {
+      idelement = $('#username');
+      passelement = $('#password');
+      service = 'ValueDomain';
+    }
     if (idelement && passelement && passelement[0] !== void 0 && passelement.val() === '') {
       return passelement.on('click', function() {
         var browser, div, id, name, xhr;
