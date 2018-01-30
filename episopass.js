@@ -15,10 +15,14 @@
       idelement = $('#ap_email');
       service = 'Amazon';
     }
+    if (location.href.match(/linkedin.com/)) {
+      passelement = $('#login-password');
+      idelement = $('#login-email');
+      service = 'LinkedIn';
+    }
     if (location.href.match(/twitter.com/)) {
-      passelement = $('.text-input')[1];
-      idelement = $('.js-signin-email');
-      passelement = idelement;
+      passelement = $('.js-password-field');
+      idelement = $('.email-input');
       service = 'Twitter';
     }
     if (idelement && passelement && passelement[0] !== void 0 && passelement.val() === '') {
@@ -30,7 +34,7 @@
             id = 'masui';
           }
           name = service + "_" + id;
-          div = $('<div>').css('position', 'absolute').css('left', '200px').css('top', '100px').css('width', '400px').css('height', '300px').css('background-color', '#ddd').css('border-radius', '5px').attr('id', 'episopass');
+          div = $('<div>').css('position', 'absolute').css('left', '200px').css('top', '200px').css('width', '400px').css('height', '300px').css('background-color', '#ddd').css('border-radius', '5px').css('z-index', 100).attr('id', 'episopass');
           $('body').append(div);
           browser = window.navigator.userAgent.toLowerCase();
           if (browser.indexOf("firefox" > -1)) {

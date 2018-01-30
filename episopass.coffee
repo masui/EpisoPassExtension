@@ -6,24 +6,23 @@
 $ ->
   passelement = []
   idelement = null
-  ## seed  = ''
   service = ''
   
   if location.href.match /facebook.com/ # OK
     passelement = $('#pass')
     idelement = $('#email')
-    ## seed = "Facebook123456"
     service = 'Facebook'
   if location.href.match /amazon/ # OK
     passelement = $('#ap_password')
     idelement = $('#ap_email')
-    ## seed = "Amazon123456"
     service = 'Amazon'
+  if location.href.match /linkedin.com/
+    passelement = $('#login-password')
+    idelement = $('#login-email')
+    service = 'LinkedIn'
   if location.href.match /twitter.com/
-    passelement = $('.text-input')[1]
-    idelement = $('.js-signin-email')
-    passelement = idelement
-    ## seed = "Twitter123456"
+    passelement = $('.js-password-field')
+    idelement = $('.email-input')
     service = 'Twitter'
 
   if idelement && passelement && passelement[0] != undefined && passelement.val() == ''
@@ -36,11 +35,12 @@ $ ->
         div = $('<div>')
           .css 'position','absolute'
           .css 'left','200px'
-          .css 'top','100px'
+          .css 'top','200px'
           .css 'width','400px'
           .css 'height','300px'
           .css 'background-color','#ddd'
           .css 'border-radius','5px'
+          .css 'z-index',100
           .attr 'id','episopass'
         $('body').append div
 
