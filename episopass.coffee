@@ -8,11 +8,11 @@ $ ->
   idelement = null
   service = ''
   
-  if location.href.match /facebook.com/ # OK
+  if location.href.match /facebook.com/
     passelement = $('#pass')
     idelement = $('#email')
     service = 'Facebook'
-  if location.href.match /amazon/ # OK
+  if location.href.match /amazon/
     passelement = $('#ap_password')
     idelement = $('#ap_email')
     service = 'Amazon'
