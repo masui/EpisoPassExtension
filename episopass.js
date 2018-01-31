@@ -22,7 +22,7 @@
     }
     if (location.href.match(/twitter.com/)) {
       passelement = $('.js-password-field');
-      idelement = $('.email-input');
+      idelement = $('.text-input');
       service = 'Twitter';
     }
     if (location.href.match(/github.com/)) {
@@ -34,6 +34,26 @@
       idelement = $('#username');
       passelement = $('#password');
       service = 'ValueDomain';
+    }
+    if (location.href.match(/heroku.com/)) {
+      idelement = $('#email');
+      passelement = $('#password');
+      service = 'Heroku';
+    }
+    if (location.href.match(/pinterest\./)) {
+      idelement = $('#email');
+      passelement = $('#password');
+      service = 'Pinterest';
+    }
+    if (location.href.match(/tumblr.com/)) {
+      idelement = $('#signup_email');
+      passelement = $('#signup_password');
+      service = 'Tumblr';
+    }
+    if (location.href.match(/gyazo.com/)) {
+      idelement = $('input[name="email"]');
+      passelement = $('input[name="password"]');
+      service = 'Gyazo';
     }
     if (idelement && passelement && passelement[0] !== void 0 && passelement.val() === '') {
       return passelement.on('click', function() {

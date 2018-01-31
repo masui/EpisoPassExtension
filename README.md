@@ -28,6 +28,12 @@
 * **GitHub**
     * ```GitHub_(ログインアドレス)```という名前でEpisoPassに登録しておきます
     * e.g. <a href="http://episopass.com/GitHub_masui@pitecan.com">```http://EpisoPass.com/GitHub_masui@pitecan.com```</a>
+* **Heroku**
+    * ```Heroku_(ログインアドレス)```という名前でEpisoPassに登録しておきます
+    * e.g. <a href="http://episopass.com/Heroku_masui@pitecan.com">```http://EpisoPass.com/Heroku_masui@pitecan.com```</a>
+* **Pinterest**
+    * ```Pinterest_(ログインアドレス)```という名前でEpisoPassに登録しておきます
+    * e.g. <a href="http://episopass.com/Pinterest_masui@pitecan.com">```http://EpisoPass.com/Pinterest_masui@pitecan.com```</a>
 * **ValueDomain**
     * ```LinkedIn_(ログイン名)```という名前でEpisoPassに登録しておきます
     * e.g. <a href="http://episopass.com/ValueDomain_tmasui">```http://EpisoPass.com/ValueDomain_tmasui```</a>
