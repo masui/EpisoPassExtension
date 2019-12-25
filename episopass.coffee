@@ -3,6 +3,8 @@
 # ChromeでもFirefoxでも使えるはず
 #
 
+episodata = []# 
+
 $ ->
   passelement = []
   idelement = null
@@ -50,6 +52,51 @@ $ ->
     passelement = $('input[name="password"]')
     service = 'Gyazo'
 
+  # セーブされてるEpisoPassデータを読む
+  #episodata = []
+  #chrome.storage.local.get "episodata", (value) ->
+  #  if Object.keys(value).length == 0
+  #    episodata = []
+  #  else
+  #    episodata = value.episodata
+
+  #
+  # EpisoPass問題ページか判定
+  #
+  if $('#question') && $('#question').length > 0
+    #
+    # 新しいデータを追加
+    #
+    console.log($('body').attr('episodata'))
+    data = JSON.parse($('body').attr('episodata'))
+    console.log 'data.name ='
+    console.log data.name
+
+    episodata = []
+    chrome.storage.local.get "episodata", (value) ->
+      if Object.keys(value).length == 0
+        episodata = []
+      else
+        episodata = value.episodata
+
+      # 古いのを消す
+      newdata = []
+      for entry in episodata
+        console.log "each - " + entry.name
+        if entry.name != data.name
+          newdata.push entry
+      episodata = newdata
+
+      # 新しいのを足す
+      episodata.push data
+    
+      # データをセーブ
+      chrome.storage.local.set
+        'episodata': episodata
+        , ->
+          console.log "saved episodata"
+          console.log episodata
+
   if idelement && passelement && passelement[0] != undefined && passelement.val() == ''
     passelement.on 'click', ->
       if !window.clicked
@@ -57,35 +104,25 @@ $ ->
         id = 'masui' if !id || id == ''
         name = "#{service}_#{id}"
 
-        div = $('<div>')
-          .css 'position','absolute'
-          .css 'left','200px'
-          .css 'top','200px'
-          .css 'width','400px'
-          .css 'height','300px'
-          .css 'background-color','#ddd'
-          .css 'border-radius','5px'
-          .css 'z-index',100
-          .attr 'id','episopass'
-        $('body').append div
+        # セーブされてるデータを読む
+        chrome.storage.local.get "episodata", (value) ->
+          episodata = value.episodata
+          console.log episodata
 
-        browser = window.navigator.userAgent.toLowerCase()
-        
-        # Chromeだと何故かgetJSONがXMLHttpRequestエラーになる
-        # Firefoxだとこれで大丈夫
-        if browser.indexOf "firefox" > -1
-          $.getJSON "http://episopass.com/#{name}.json", (data) ->
-            exports.run data,id,data.seed,passelement
-            # exports.run data,id,seed,passelement
+          for entry in episodata
+            if entry.name == name
+              div = $('<div>')
+                .css 'position','absolute'
+                .css 'left','200px'
+                .css 'top','200px'
+                .css 'width','400px'
+                .css 'height','450px'
+                .css 'background-color','#ddd'
+                .css 'border-radius','5px'
+                .css 'z-index',100
+                .attr 'id','episopass'
+              $('body').append div
 
-        # Chromeの場合こちらなら大丈夫 httpsでなきゃ駄目!
-        if browser.indexOf "chrome" > -1
-          xhr = new XMLHttpRequest();
-          xhr.open("GET", "https://episopass.com/#{name}.json", true);
-          xhr.onreadystatechange = ->
-            if xhr.readyState == 4
-              data = JSON.parse xhr.responseText
-              exports.run data,id,data.seed,passelement
-          xhr.send()
+              exports.run entry,id,entry.seed,passelement
 
       window.clicked = true
