@@ -19,8 +19,10 @@ $ ->
     idelement = $('#ap_email')
     service = 'Amazon'
   if location.href.match /linkedin.com/
-    passelement = $('#login-password')
-    idelement = $('#login-email')
+    # passelement = $('#login-password')
+    # idelement = $('#login-email')
+    passelement = $('#password')
+    idelement = $('#username')
     service = 'LinkedIn'
   if location.href.match /twitter.com/
     passelement = $('.js-password-field')
