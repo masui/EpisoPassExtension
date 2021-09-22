@@ -133,7 +133,7 @@
             for (i = 0, len = episodata.length; i < len; i++) {
               entry = episodata[i];
               if (entry.name === name) {
-                div = $('<div>').css('position', 'absolute').css('left', '200px').css('top', '200px').css('width', '400px').css('height', '450px').css('background-color', '#ddd').css('border-radius', '5px').css('z-index', 100).attr('id', 'episopass');
+                div = $('<div>').css('position', 'absolute').css('left', '0px').css('top', '0px').css('width', '400px').css('height', '450px').css('background-color', '#ddd').css('border-radius', '5px').css('z-index', 100).attr('id', 'episopass');
                 $('body').append(div);
                 results.push(exports.run(entry, id, entry.seed, passelement));
               } else {
