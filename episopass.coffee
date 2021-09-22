@@ -54,6 +54,11 @@ $ ->
     passelement = $('input[name="password"]')
     service = 'Gyazo'
 
+
+  console.log service
+  console.log idelement
+  console.log passelement
+
   # セーブされてるEpisoPassデータを読む
   #episodata = []
   #chrome.storage.local.get "episodata", (value) ->

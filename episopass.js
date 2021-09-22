@@ -65,6 +65,9 @@
       passelement = $('input[name="password"]');
       service = 'Gyazo';
     }
+    console.log(service);
+    console.log(idelement);
+    console.log(passelement);
     // セーブされてるEpisoPassデータを読む
     //episodata = []
     //chrome.storage.local.get "episodata", (value) ->
@@ -122,6 +125,7 @@
             id = 'masui';
           }
           name = `${service}_${id}`;
+          alert(name);
           // セーブされてるデータを読む
           chrome.storage.local.get("episodata", function(value) {
             var div, entry, i, len, results;
