@@ -125,7 +125,6 @@
             id = 'masui';
           }
           name = `${service}_${id}`;
-          alert(name);
           // セーブされてるデータを読む
           chrome.storage.local.get("episodata", function(value) {
             var div, entry, i, len, results;
