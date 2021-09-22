@@ -1,3 +1,5 @@
+all: js xpi
+
 #
 # Firefox/Chrome用EpisoPass拡張機能
 #

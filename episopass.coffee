@@ -69,10 +69,7 @@ $ ->
     #
     # 新しいデータを追加
     #
-    console.log($('body').attr('episodata'))
     data = JSON.parse($('body').attr('episodata'))
-    console.log 'data.name ='
-    console.log data.name
 
     episodata = []
     chrome.storage.local.get "episodata", (value) ->
@@ -99,6 +96,9 @@ $ ->
           console.log "saved episodata"
           console.log episodata
 
+  #
+  # パスワード入力画面か判定し、
+  # 
   if idelement && passelement && passelement[0] != undefined && passelement.val() == ''
     passelement.on 'click', ->
       if !window.clicked
@@ -109,8 +109,6 @@ $ ->
         # セーブされてるデータを読む
         chrome.storage.local.get "episodata", (value) ->
           episodata = value.episodata
-          console.log episodata
-
           for entry in episodata
             if entry.name == name
               div = $('<div>')
