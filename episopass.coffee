@@ -55,8 +55,11 @@ $ ->
     service = 'Gyazo'
 
 
+  console.log "11111"
   console.log service
+  console.log "222222"
   console.log idelement
+  console.log "333333"
   console.log passelement
 
   # セーブされてるEpisoPassデータを読む
@@ -70,6 +73,8 @@ $ ->
   #
   # EpisoPass問題ページか判定
   #
+  # これだけでは不充分な気がするな?
+  # 
   if $('#question') && $('#question').length > 0
     #
     # 新しいデータを追加
